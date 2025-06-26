@@ -1,0 +1,28 @@
+<p-inputGroup>
+  @if (icon()) {
+    <button
+      pButton
+      type="button"
+      class="icon-container"
+      [ngClass]="{
+        disabled: disabled(),
+      }"
+      [icon]="icon()"></button>
+  }
+  <input
+    pInputText
+    class="input-container right-border-radius"
+    [type]="type()"
+    [maxlength]="maxLength()"
+    [disabled]="disabled()"
+    [placeholder]="placeholder()"
+    [ngClass]="{
+        'left-border-radius': !icon(),
+        'border-left-0': icon(),
+        disabled: disabled(),
+      }"
+    (blur)="onBlur.emit($event);"
+    (keyup)="onKeyUp.emit($event)"
+    (change)="onInputChange.emit($event)"
+    [(ngModel)]="value" />
+</p-inputGroup>
