@@ -1,13 +1,12 @@
-import { Component, OnInit, computed, effect, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
-import {AppInputComponent} from '../../shared-components/app-input/app-input.component';
 
 @Component({
   selector: 'app-notifications-page',
   standalone: true,
-  imports: [CommonModule, TableModule, AppInputComponent, AppInputComponent],
+  imports: [CommonModule, TableModule],
   templateUrl: './notificationspage.component.html',
   styleUrl: './notificationspage.component.scss'
 })

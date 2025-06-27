@@ -18,7 +18,7 @@ declare global {
 export class ApiService {
   http = inject(HttpClient)
 
-  apiBaseUrl: string = 'http://localhost:8080/';
+  apiBaseUrl: string = 'http://notification-back-docker:8080/';
 
   constructor() { }
 
