@@ -1,4 +1,4 @@
-import {inject, Injectable} from '@angular/core';
+import {inject, Injectable, signal} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Injectable({
@@ -7,8 +7,17 @@ import {Router} from '@angular/router';
 export class GlobalService {
 
   router = inject(Router);
+  private activeRoute = signal<string>("");
 
-  navigateTo(module: string,path: string) {
-    this.router.navigate(['/' + module, path]);
+  navigateTo(path: string) {
+    this.router.navigate(['/' + path]);
+  }
+
+  getActiveRoute() {
+    return this.activeRoute();
+  }
+
+  setActiveRoute(route: string) {
+    this.activeRoute.set(route);
   }
 }

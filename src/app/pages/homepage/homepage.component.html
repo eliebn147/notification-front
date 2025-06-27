@@ -1,1 +1,22 @@
-<p>homepage works!</p>
+<div style="max-width: 400px; margin: auto; display: flex; align-items: center; flex-direction: column; gap: 0.5rem; justify-content: center;">
+  <div style="width: 80%">
+    <label for="message">Message</label>
+    <app-input id="message" [(value)]="notificationForm.message"/>
+  </div>
+  <div style="width: 80%">
+    <label for="recipient">Recipient</label>
+    <app-input id="recipient" [(value)]="notificationForm.recipient"/>
+    <label for="type">Type</label></div>
+  <div style="width: 80%">
+    <p-dropdown
+      [style]="{width: '100%'}"
+      [options]="typeOptions"
+      [(ngModel)]="notificationForm.type"
+      placeholder="Select Type"
+      inputId="type"
+    ></p-dropdown>
+  </div>
+  <p-button label="Create Notification" icon="pi pi-check" (onClick)="createNotification()"/>
+</div>
+
+<p-toast></p-toast>

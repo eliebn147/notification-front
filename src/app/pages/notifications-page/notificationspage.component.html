@@ -1,0 +1,33 @@
+<p-table [value]="notifications()" [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]">
+
+  <ng-template pTemplate="caption">
+    <div class="p-d-flex p-jc-between">
+      <h3>Notifications</h3>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th>
+        Message
+      </th>
+      <th>
+        Recipient
+      </th>
+      <th>
+        Type
+      </th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-notification>
+    <tr>
+      <td>{{ notification.id }}</td>
+      <td>{{ notification.message }}</td>
+      <td>{{ notification.recipient }}</td>
+      <td>{{ notification.type }}</td>
+    </tr>
+  </ng-template>
+
+</p-table>

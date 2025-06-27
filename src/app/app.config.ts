@@ -4,6 +4,7 @@ import {provideAnimationsAsync} from '@angular/platform-browser/animations/async
 import {providePrimeNG} from 'primeng/config';
 import {routes} from './app.routes';
 import preset from './primeng/theme-preset';
+import {provideHttpClient} from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({eventCoalescing: true}),
@@ -15,6 +16,7 @@ export const appConfig: ApplicationConfig = {
           darkModeSelector: false || 'none'
         }
       }
-    })
+    }),
+    provideHttpClient()
   ]
 };

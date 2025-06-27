@@ -1,0 +1,8 @@
+<div class="left-navigation">
+  <div class="navigation-icons" [class.active]="globalService.getActiveRoute() === ''" (click)="navigateTo('')">
+    <i class="pi pi-user"></i>
+  </div>
+  <div class="navigation-icons" [class.active]="globalService.getActiveRoute() === 'notifications'" (click)="navigateTo('notifications')">
+    <i class="pi pi-home"></i>
+  </div>
+</div>
